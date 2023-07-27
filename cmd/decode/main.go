@@ -6,11 +6,12 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"os"
+
 	"github.com/decred/dcrd/chaincfg/v3"
 	"github.com/decred/dcrd/dcrutil/v4"
 	"github.com/decred/dcrd/txscript/v4"
 	"github.com/decred/dcrd/txscript/v4/stdaddr"
-	"os"
 )
 
 func _main() error {
@@ -50,11 +51,11 @@ func _main() error {
 	//}
 	//fmt.Println(fmt.Sprintf("redeem script: %x", redeemScriptBytes))
 
-	sigScript, err := hex.DecodeString("483045022100930b1aff8ca53b0b80b719e9052f17d46d7621f620c9c6a7d22c0302cf6df2db022000e9b2f71b1c54220267ce7bc20740ba132e07853c1f007a201775877d4efd600121031ef80416dc272540c3eadd5cf3152998dac28c10c1cd37531a631a6b7533865620fe37c3c7470189f96b158366fcda9760de1a9af93054af63bbfc11e43087110e514c616382012088c020e826ca0c8c2b5708a7f41a581d8daa45986d4b31c8fbc91e8035c3fb9ccd23338876a91494c0e71871c012b6bedde9a70f6d3f10f6d25500670410b7bb64b17576a914c4363d6aacd734ca558589a681a7b54a0153a3c16888ac")
+	sigScript, err := hex.DecodeString("483045022100e619b9ecc2fd2ec4e3f38be09688c722661e8a1ef3dce09196a7f5dd30eaa25102202fa58fc4344f844ba3194a519c956f0c1baf8b82353d4b3cb9a8e5ba344e0b3901210380dcc0f97c89b186aab2329bae4b30ee920e17a3b6435e4c121178d908cdb4de20e365285e21fc311069cf206d9e56c8eaab996ae84d4c18787640cdb7a6c91253514c616382012088c020a017a12d2dc3f88f98c3225e226e16a5a1d3190a725ab90c32e5b6115620b7d48876a9148a00aafbd40a6e7b619a7b2ca0a8763b4b57507f6704520cbb64b17576a914ce45bc063873330be210f80ebd21acfd9aaf66226888ac")
 	if err != nil {
 		return fmt.Errorf("hex.DecodeString: %v", err)
 	}
-	contractHash, err := hex.DecodeString("c929d1e4e3d32ce676049ba608825cdb4ef0b765")
+	contractHash, err := hex.DecodeString("b5c5936018751a6f427dfc524de0c8f547d183f4")
 	if err != nil {
 		return fmt.Errorf("hex.DecodeString: %v", err)
 	}
@@ -62,6 +63,7 @@ func _main() error {
 	if err != nil {
 		return fmt.Errorf("hex.DecodeString: %v", err)
 	}
+	fmt.Println(fmt.Sprintf("secret hash: %x", sha256.Sum256(secret)))
 	fmt.Println(fmt.Sprintf("secret: %x", secret))
 
 	//addrBytes, err := hex.DecodeString("abb90acd25884d6238b26a585caf123a7212a5e5")

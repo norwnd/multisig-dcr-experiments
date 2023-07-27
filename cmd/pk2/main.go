@@ -2,16 +2,17 @@ package main
 
 import (
 	"context"
-	"decred.org/dcrwallet/v4/wallet/udb"
 	"encoding/hex"
 	"fmt"
+	"os"
+
+	"decred.org/dcrwallet/v4/wallet/udb"
 	"github.com/decred/dcrd/dcrec"
 	"github.com/decred/dcrd/txscript/v4"
 	"github.com/decred/dcrd/txscript/v4/stdaddr"
 	"github.com/decred/dcrd/txscript/v4/stdscript"
 	"github.com/norwnd/multisig"
 	"github.com/norwnd/multisig/signer"
-	"os"
 )
 
 var ctx = context.Background()

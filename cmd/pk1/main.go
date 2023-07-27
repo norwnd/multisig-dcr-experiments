@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/norwnd/multisig"
 	"os"
+
+	"github.com/norwnd/multisig"
 )
 
 func _main() error {

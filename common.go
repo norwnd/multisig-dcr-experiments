@@ -2,6 +2,7 @@ package multisig
 
 import (
 	"encoding/hex"
+
 	"github.com/decred/dcrd/chaincfg/v3"
 	"github.com/decred/dcrd/hdkeychain/v3"
 	"github.com/decred/dcrd/txscript/v4/stdaddr"

@@ -8,6 +8,9 @@ package multisig_test
 import (
 	"errors"
 	"fmt"
+	mrand "math/rand"
+	"testing"
+
 	"github.com/decred/dcrd/chaincfg/chainhash"
 	"github.com/decred/dcrd/chaincfg/v3"
 	"github.com/decred/dcrd/dcrec"
@@ -17,8 +20,6 @@ import (
 	"github.com/decred/dcrd/txscript/v4/stdaddr"
 	"github.com/decred/dcrd/txscript/v4/stdscript"
 	"github.com/decred/dcrd/wire"
-	mrand "math/rand"
-	"testing"
 )
 
 //
